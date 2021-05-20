@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../style.css">
+  <title>FreeFlip</title>
+</head>
+<body>
+
+<h1>FreeFlip</h1>
+
+<!-- STEP1. 接続中 -->
+<section id="nowconnecting">
+  ...サーバに接続中
+</section>
+<!-- /接続中 -->
+
+<!-- STEP2. 名前を入力 -->
+<section id="inputmyname">
+  <p>あなたの名前を入力してください</p>
+  <form id="frm-myname">
+    <input type="text" id="txt-myname">
+    <button>入室</button>
+  </form>
+</section>
+<!-- /名前を入力 -->
+
+<section id="main">
+
+  <!-- ログアウト -->
+  <form id="frm-quit">
+    <button>退室する</button>
+  </form>
+
+
+  <p id="myname"></p>
+  <!-- フリップ -->
+  <canvas id="draw-area" width="400px" height="400px"></canvas>
+
+  <!-- フリップの全消し -->
+  <div>
+    <button id="clear-button">全消し</button>
+  </div>
+
+  <!-- フリップの送信 -->
+  <div>
+    <button id="submit-flip">送信</button>
+  </div>
+
+  <!-- フリップ一覧 -->
+  <div id="flip-index" class="container">
+  </div>
+
+  <!-- 発言フォーム -->
+  <!-- <form id="frm-post">
+    <input type="text" id="msg">
+    <button>送信</button>
+  </form> -->
+
+  <!-- 発言ログ -->
+  <!-- <ul id="msglist">
+  </ul> -->
+
+</section>
+
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="../canvas.js"></script>
+  <script src="../app.js"></script>
+</body>
+</html>
+
