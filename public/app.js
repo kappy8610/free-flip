@@ -7,9 +7,7 @@ const IAM = {
 };
 
 // メンバー一覧を入れる箱
-const MEMBER = {
-  0: "マスター"
-};
+const MEMBER = {};
 
 //-------------------------------------
 // Socket.ioサーバへ接続
@@ -66,15 +64,16 @@ document.querySelector("#frm-myname").addEventListener("submit", (e)=>{
     // 入室フラグを立てる
     IAM.is_join = true;
 
-    indexFlip(data)
     // すでにログイン中のメンバー一覧を反映
-    // for(let i=0; i<data.list.length; i++){
-    //   const cur = data.list[i];
-    //   if(!(cur.token in MEMBER)){
-    //     // addMemberList(cur.token, cur.name);
-    //     MEMBER[cur.token] = cur.name;
-    //   }
-    // }
+    for(let i=0; i<data.list.length; i++){
+      const cur = data.list[i];
+      if(!(cur.token in MEMBER)){
+        MEMBER[cur.token] = cur.name;
+      }
+    }
+
+    // フリップ一覧を表示
+    indexFlip(data)
 
     // 表示を切り替える
     document.querySelector("#inputmyname").style.display = "none";   // 名前入力を非表示
@@ -204,6 +203,11 @@ socket.on("chat", (msg)=>{
  * @return {void}
  */
  function gotoSTEP1(){
+  // canvasを白紙にする
+  const canvas = document.querySelector('#draw-area')
+  const context = canvas.getContext('2d')
+  context.clearRect(0, 0, canvas.width, canvas.height)
+
   // NowLoadingから開始
   document.querySelector("#nowconnecting").style.display = "block";  // NowLoadingを表示
   document.querySelector("#inputmyname").style.display = "none";     // 名前入力を非表示
@@ -286,19 +290,19 @@ const indexFlip = data => {
   const div = document.querySelector('#flip-index')
   for(let i = 0; i < data.list.length; i++){
     const cur = data.list[i];
-    if(!(cur.token in MEMBER)){
+    if(cur.token in MEMBER){
       MEMBER[cur.token] = cur.flip;
       // フリップがなければ白紙、あれば表示
       if(cur.flip === null ){
         div.insertAdjacentHTML('afterbegin', `
-          <div class="item" id="${data.name}-item">
+          <div class="item" id="${cur.name}-item">
             <p>${cur.name}</p>
             <img id="${cur.name}" width="200" height="200"/>
           </div>
         `)
       } else {
         div.insertAdjacentHTML('afterbegin', `
-          <div class="item" id="${data.name}-item">
+          <div class="item" id="${cur.name}-item">
             <p>${cur.name}</p>
             <img src=${cur.flip} id="${cur.name}" width="200" height="200"/>
           </div>

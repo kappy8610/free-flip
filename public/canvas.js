@@ -4,13 +4,13 @@ window.addEventListener('load', () => {
   const canvas = document.querySelector('#draw-area')
   // contextを使ってcanvasに絵を書いていく
   const context = canvas.getContext('2d')
-  
+
   // 直前のマウスのcanvas上のx座標とy座標を記録する
   const lastPosition = { x: null, y: null }
-  
+
   // マウスがドラッグされているか(クリックされたままか)判断するためのフラグ
   let isDrag = false
-  
+
   // 絵を書く
   const draw = (x, y) => {
     // マウスがドラッグされていなかったら処理を中断する。
@@ -21,14 +21,14 @@ window.addEventListener('load', () => {
 
     // 「context.beginPath()」と「context.closePath()」を都度draw関数内で実行するよりも、
     // 線の描き始め(dragStart関数)と線の描き終わり(dragEnd)で1回ずつ読んだほうがより綺麗に線画書ける
-    
+
     // 線の状態を定義する
     // MDN CanvasRenderingContext2D: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineJoin
     context.lineCap = 'round' // 丸みを帯びた線にする
     context.lineJoin = 'round' // 丸みを帯びた線にする
     context.lineWidth = 5 // 線の太さ
     context.strokeStyle = 'black' // 線の色
-    
+
     // 書き始めは lastPosition.x, lastPosition.y の値はnullとなっているため、
     // クリックしたところを開始点としている。
     // この関数(draw関数内)の最後の2行で lastPosition.xとlastPosition.yに
