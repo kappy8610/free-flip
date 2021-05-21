@@ -107,6 +107,21 @@ io.on("connection", (socket)=>{
     }
   })
 
+  // 切断されたときユーザーを削除する
+  socket.on("disconnect", ()=>{
+    // まだ、ユーザー情報が残っていたら削除する
+    if (!!MEMBER[socket.id]){
+    // 本人に通知
+      io.to(socket.id).emit("quit-result", {status: true});
+  
+      // 本人以外に通知
+      socket.broadcast.emit("member-quit", {token:MEMBER[socket.id].count, name:MEMBER[socket.id].name});
+  
+      // 削除
+      delete MEMBER[socket.id];
+    }
+  })
+
   // チャット送信
   // socket.on("chat-post", (msg)=>{
   //   io.emit("chat", msg)

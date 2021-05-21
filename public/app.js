@@ -209,6 +209,11 @@ socket.on("chat", (msg)=>{
   document.querySelector("#inputmyname").style.display = "none";     // 名前入力を非表示
   document.querySelector("#main").style.display = "none";     // 名前入力を非表示
   // document.querySelector("#chat").style.display = "none";            // チャットを非表示
+  // フリップリストをすべて削除
+  const parent = document.querySelector("#flip-index")
+  while(parent.firstChild){
+    parent.removeChild(parent.firstChild)
+  }
 
   // 自分の情報を初期化
   IAM.token = null;
