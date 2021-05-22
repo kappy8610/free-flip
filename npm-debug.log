@@ -1,0 +1,136 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'socket.io',
+1 verbose cli   'express' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData socket.io@^4.0.0
+8 silly fetchPackageMetaData express@^4.17.1
+9 silly fetchNamedPackageData socket.io
+10 silly mapToRegistry name socket.io
+11 silly mapToRegistry using default registry
+12 silly mapToRegistry registry https://registry.npmjs.org/
+13 silly mapToRegistry uri https://registry.npmjs.org/socket.io
+14 silly fetchNamedPackageData express
+15 silly mapToRegistry name express
+16 silly mapToRegistry using default registry
+17 silly mapToRegistry registry https://registry.npmjs.org/
+18 silly mapToRegistry uri https://registry.npmjs.org/express
+19 verbose request uri https://registry.npmjs.org/express
+20 verbose request no auth needed
+21 info attempt registry request try #1 at 11:35:05 PM
+22 verbose request id 29c36002bd979e84
+23 verbose etag W/"8156b367b28a50f1aa4b25c243e4e59c"
+24 verbose lastModified Tue, 18 May 2021 17:15:14 GMT
+25 http request GET https://registry.npmjs.org/express
+26 verbose request uri https://registry.npmjs.org/socket.io
+27 verbose request no auth needed
+28 info attempt registry request try #1 at 11:35:05 PM
+29 verbose etag W/"6712ac6f5a7f2050f34ec6afed93ed9e"
+30 verbose lastModified Mon, 17 May 2021 21:18:57 GMT
+31 http request GET https://registry.npmjs.org/socket.io
+32 http 304 https://registry.npmjs.org/express
+33 verbose headers { date: 'Sat, 22 May 2021 14:35:06 GMT',
+33 verbose headers   connection: 'keep-alive',
+33 verbose headers   'cf-ray': '6536c4e7ae510abc-NRT',
+33 verbose headers   age: '5068',
+33 verbose headers   'cache-control': 'public, max-age=300',
+33 verbose headers   etag: '"8156b367b28a50f1aa4b25c243e4e59c"',
+33 verbose headers   'last-modified': 'Tue, 18 May 2021 17:15:14 GMT',
+33 verbose headers   vary: 'Accept-Encoding',
+33 verbose headers   'cf-cache-status': 'HIT',
+33 verbose headers   'cf-request-id': '0a361964ca00000abce500d000000001',
+33 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+33 verbose headers   server: 'cloudflare' }
+34 silly get cb [ 304,
+34 silly get   { date: 'Sat, 22 May 2021 14:35:06 GMT',
+34 silly get     connection: 'keep-alive',
+34 silly get     'cf-ray': '6536c4e7ae510abc-NRT',
+34 silly get     age: '5068',
+34 silly get     'cache-control': 'public, max-age=300',
+34 silly get     etag: '"8156b367b28a50f1aa4b25c243e4e59c"',
+34 silly get     'last-modified': 'Tue, 18 May 2021 17:15:14 GMT',
+34 silly get     vary: 'Accept-Encoding',
+34 silly get     'cf-cache-status': 'HIT',
+34 silly get     'cf-request-id': '0a361964ca00000abce500d000000001',
+34 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+34 silly get     server: 'cloudflare' } ]
+35 verbose etag https://registry.npmjs.org/express from cache
+36 verbose get saving express to /mnt/c/Users/uchiyama/workspace-1804/.npm/registry.npmjs.org/express/.cache.json
+37 http 304 https://registry.npmjs.org/socket.io
+38 verbose headers { date: 'Sat, 22 May 2021 14:35:07 GMT',
+38 verbose headers   connection: 'keep-alive',
+38 verbose headers   'cf-ray': '6536c4e79fe50aca-KIX',
+38 verbose headers   'cache-control': 'public, max-age=300',
+38 verbose headers   etag: '"6712ac6f5a7f2050f34ec6afed93ed9e"',
+38 verbose headers   'last-modified': 'Mon, 17 May 2021 21:18:57 GMT',
+38 verbose headers   vary: 'Accept-Encoding',
+38 verbose headers   'cf-cache-status': 'MISS',
+38 verbose headers   'cf-request-id': '0a361964c700000aca4485f000000001',
+38 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+38 verbose headers   server: 'cloudflare' }
+39 silly get cb [ 304,
+39 silly get   { date: 'Sat, 22 May 2021 14:35:07 GMT',
+39 silly get     connection: 'keep-alive',
+39 silly get     'cf-ray': '6536c4e79fe50aca-KIX',
+39 silly get     'cache-control': 'public, max-age=300',
+39 silly get     etag: '"6712ac6f5a7f2050f34ec6afed93ed9e"',
+39 silly get     'last-modified': 'Mon, 17 May 2021 21:18:57 GMT',
+39 silly get     vary: 'Accept-Encoding',
+39 silly get     'cf-cache-status': 'MISS',
+39 silly get     'cf-request-id': '0a361964c700000aca4485f000000001',
+39 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+39 silly get     server: 'cloudflare' } ]
+40 verbose etag https://registry.npmjs.org/socket.io from cache
+41 verbose get saving socket.io to /mnt/c/Users/uchiyama/workspace-1804/.npm/registry.npmjs.org/socket.io/.cache.json
+42 silly install normalizeTree
+43 silly loadCurrentTree Finishing
+44 silly loadIdealTree Starting
+45 silly install loadIdealTree
+46 silly cloneCurrentTree Starting
+47 silly install cloneCurrentTreeToIdealTree
+48 silly cloneCurrentTree Finishing
+49 silly loadShrinkwrap Starting
+50 silly install loadShrinkwrap
+51 silly loadShrinkwrap Finishing
+52 silly loadAllDepsIntoIdealTree Starting
+53 silly install loadAllDepsIntoIdealTree
+54 silly resolveWithNewModule express@4.17.1 checking installable status
+55 silly cache add args [ 'express@^4.17.1', null ]
+56 verbose cache add spec express@^4.17.1
+57 verbose stack Error: Missing required argument #1
+57 verbose stack     at andLogAndFinish (/usr/share/npm/lib/fetch-package-metadata.js:31:3)
+57 verbose stack     at fetchPackageMetadata (/usr/share/npm/lib/fetch-package-metadata.js:51:22)
+57 verbose stack     at resolveWithNewModule (/usr/share/npm/lib/install/deps.js:456:12)
+57 verbose stack     at /usr/share/npm/lib/install/deps.js:190:5
+57 verbose stack     at /usr/share/npm/node_modules/slide/lib/async-map.js:52:35
+57 verbose stack     at Array.forEach (<anonymous>)
+57 verbose stack     at /usr/share/npm/node_modules/slide/lib/async-map.js:52:11
+57 verbose stack     at Array.forEach (<anonymous>)
+57 verbose stack     at asyncMap (/usr/share/npm/node_modules/slide/lib/async-map.js:51:8)
+57 verbose stack     at exports.loadRequestedDeps (/usr/share/npm/lib/install/deps.js:188:3)
+58 verbose cwd /mnt/c/Users/uchiyama/workspace-1804/free-flip
+59 error Linux 4.4.0-19041-Microsoft
+60 error argv "/usr/bin/node" "/usr/bin/npm" "install" "socket.io" "express"
+61 error node v8.10.0
+62 error npm  v3.5.2
+63 error code EMISSINGARG
+64 error typeerror Error: Missing required argument #1
+64 error typeerror     at andLogAndFinish (/usr/share/npm/lib/fetch-package-metadata.js:31:3)
+64 error typeerror     at fetchPackageMetadata (/usr/share/npm/lib/fetch-package-metadata.js:51:22)
+64 error typeerror     at resolveWithNewModule (/usr/share/npm/lib/install/deps.js:456:12)
+64 error typeerror     at /usr/share/npm/lib/install/deps.js:190:5
+64 error typeerror     at /usr/share/npm/node_modules/slide/lib/async-map.js:52:35
+64 error typeerror     at Array.forEach (<anonymous>)
+64 error typeerror     at /usr/share/npm/node_modules/slide/lib/async-map.js:52:11
+64 error typeerror     at Array.forEach (<anonymous>)
+64 error typeerror     at asyncMap (/usr/share/npm/node_modules/slide/lib/async-map.js:51:8)
+64 error typeerror     at exports.loadRequestedDeps (/usr/share/npm/lib/install/deps.js:188:3)
+65 error typeerror This is an error with npm itself. Please report this error at:
+65 error typeerror     <http://github.com/npm/npm/issues>
+66 verbose exit [ 1, true ]

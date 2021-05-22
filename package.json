@@ -1,15 +1,25 @@
 {
   "name": "free-flip",
   "version": "1.0.0",
-  "description": "",
+  "description": "- 簡単な絵などを描いて共有できるシステム - お絵描きの大喜利、oxなどのクイズ、フリップを使ってオンラインボードゲームなどに使える",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "socket.io": "^4.0.0"
-  }
+    "socket.io": "^4.1.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kappy8610/free-flip.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kappy8610/free-flip/issues"
+  },
+  "homepage": "https://github.com/kappy8610/free-flip#readme"
 }
