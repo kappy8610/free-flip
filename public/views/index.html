@@ -4,49 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"> -->
   <link rel="stylesheet" href="../style.css">
   <title>FreeFlip</title>
 </head>
-<body>
 
-<h1>FreeFlip</h1>
-
-<!-- STEP1. 接続中 -->
-<section id="nowconnecting">
-  ...サーバに接続中
-</section>
-<!-- /接続中 -->
-
-<!-- STEP2. 名前を入力 -->
-<section id="inputmyname">
-  <p>あなたの名前を入力してください</p>
-  <form id="frm-myname">
-    <input type="text" id="txt-myname">
-    <button>入室</button>
-  </form>
-</section>
-<!-- /名前を入力 -->
-
-<section id="main">
+<header>
+  <h1>FreeFlip</h1>
 
   <!-- ログアウト -->
   <form id="frm-quit">
-    <button>退室する</button>
+    <button id="quit-button">退室する</button>
   </form>
+</header>
 
+<body>
 
-  <p id="myname"></p>
-  <!-- フリップ -->
-  <canvas id="draw-area" width="400px" height="400px"></canvas>
+  <div class="connection">
+    <!-- STEP1. 接続中 -->
+    <section id="nowconnecting">
+      ...サーバに接続中
+    </section>
+    <!-- /接続中 -->
 
-  <!-- フリップの全消し -->
-  <div>
-    <button id="clear-button">全消し</button>
+    <!-- STEP2. 名前を入力 -->
+    <section id="inputmyname">
+      <p>あなたの名前を入力してください</p>
+      <form id="frm-myname">
+        <input type="text" id="txt-myname">
+        <button>入室</button>
+      </form>
+    </section>
+    <!-- /名前を入力 -->
   </div>
 
-  <!-- フリップの送信 -->
-  <div>
-    <button id="submit-flip">送信</button>
+<section id="main">
+
+  <div class="canvas">
+    <p id="myname">name</p>
+    <!-- フリップ -->
+    <canvas id="draw-area" width="400px" height="400px"></canvas>
+
+    <div class="canvas-buttons">
+      <!-- フリップの送信 -->
+      <div>
+        <button id="submit-flip">送信</button>
+      </div>
+
+      <!-- フリップの全消し -->
+      <div>
+        <button id="clear-button">全消し</button>
+      </div>
+    </div>
   </div>
 
   <!-- フリップ一覧 -->
@@ -65,10 +74,9 @@
 
 </section>
 
-
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="../canvas.js"></script>
-  <script src="../app.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="../canvas.js"></script>
+<script src="../app.js"></script>
 </body>
 </html>
 

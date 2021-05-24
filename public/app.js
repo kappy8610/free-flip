@@ -78,6 +78,7 @@ document.querySelector("#frm-myname").addEventListener("submit", (e)=>{
     // 表示を切り替える
     document.querySelector("#inputmyname").style.display = "none";   // 名前入力を非表示
     document.querySelector("#main").style.display = "block";         // フリップ一覧を表示
+    document.querySelector("#quit-button").style.display = "block";    // 「退室」入力を表示
 
     // ボタンを無効にする
     document.querySelector("#frm-myname button").setAttribute("disabled", "disabled");
@@ -167,10 +168,13 @@ socket.on("member-join", (data)=>{
     // addMessageFromMaster(`${data.name}さんが入室しました`);
     // addMemberList(data.token, data.name);
     const div = document.querySelector('#flip-index')
-    div.insertAdjacentHTML('afterbegin', `
+    div.insertAdjacentHTML('beforeend', `
       <div class="item" id="${data.name}-item">
         <p>${data.name}</p>
-        <img id="${data.name}" width="200" height="200"/>
+        <div class="pictures">
+          <img class="picture_frame" src="../painting_frame1.png" alt="額縁">
+          <img class="picture" id="${data.name}" width="200" height="200"/>
+        </div>
       </div>
     `)
   }
@@ -211,7 +215,8 @@ socket.on("chat", (msg)=>{
   // NowLoadingから開始
   document.querySelector("#nowconnecting").style.display = "block";  // NowLoadingを表示
   document.querySelector("#inputmyname").style.display = "none";     // 名前入力を非表示
-  document.querySelector("#main").style.display = "none";     // 名前入力を非表示
+  document.querySelector("#main").style.display = "none";     // メイン入力を非表示
+  document.querySelector("#quit-button").style.display = "none";     // メイン入力を非表示
   // document.querySelector("#chat").style.display = "none";            // チャットを非表示
   // フリップリストをすべて削除
   const parent = document.querySelector("#flip-index")
@@ -250,28 +255,28 @@ socket.on("chat", (msg)=>{
  * @return {void}
  */
  function addMessage(msg, is_me=false){
-  const list = document.querySelector("#msglist");
-  const li = document.createElement("li");
+  // const list = document.querySelector("#msglist");
+  // const li = document.createElement("li");
 
-  // マスターの発言
-  if( msg.token === 0 ){
-    li.innerHTML = `<span class="msg-master"><span class="name">${name}</span>> ${msg.text}</span>`;
-  }
-  //------------------------
-  // 自分の発言
-  //------------------------
-  if( is_me ){
-    li.innerHTML = `<span class="msg-me"><span class="name">${msg.name}</span>> ${msg.text}</span>`;
-  }
-  //------------------------
-  // 自分以外の発言
-  //------------------------
-  else{
-    li.innerHTML = `<span class="msg-member"><span class="name">${msg.name}</span>> ${msg.text}</span>`;
-  }
+  // // マスターの発言
+  // if( msg.token === 0 ){
+  //   li.innerHTML = `<span class="msg-master"><span class="name">${name}</span>> ${msg.text}</span>`;
+  // }
+  // //------------------------
+  // // 自分の発言
+  // //------------------------
+  // if( is_me ){
+  //   li.innerHTML = `<span class="msg-me"><span class="name">${msg.name}</span>> ${msg.text}</span>`;
+  // }
+  // //------------------------
+  // // 自分以外の発言
+  // //------------------------
+  // else{
+  //   li.innerHTML = `<span class="msg-member"><span class="name">${msg.name}</span>> ${msg.text}</span>`;
+  // }
 
-  // リストの最初に追加
-  list.insertBefore(li, list.firstChild);
+  // // リストの最初に追加
+  // list.insertBefore(li, list.firstChild);
 }
 
 /**
@@ -281,7 +286,7 @@ socket.on("chat", (msg)=>{
  * @return {void}
  */
 function addMessageFromMaster(msg){
-  addMessage({token: 0, text: msg});
+  // addMessage({token: 0, text: msg});
 }
 
 
@@ -294,17 +299,23 @@ const indexFlip = data => {
       MEMBER[cur.token] = cur.flip;
       // フリップがなければ白紙、あれば表示
       if(cur.flip === null ){
-        div.insertAdjacentHTML('afterbegin', `
+        div.insertAdjacentHTML('beforeend', `
           <div class="item" id="${cur.name}-item">
             <p>${cur.name}</p>
-            <img id="${cur.name}" width="200" height="200"/>
+            <div class="pictures">
+              <img class="picture_frame" src="../painting_frame1.png" alt="額縁">
+              <img class="picture" id="${cur.name}" />
+            </div>
           </div>
         `)
       } else {
-        div.insertAdjacentHTML('afterbegin', `
+        div.insertAdjacentHTML('beforeend', `
           <div class="item" id="${cur.name}-item">
             <p>${cur.name}</p>
-            <img src=${cur.flip} id="${cur.name}" width="200" height="200"/>
+            <div class="pictures">
+              <img class="picture_frame" src="../painting_frame1.png" alt="額縁">
+              <img class="picture" src=${cur.flip} id="${cur.name}" />
+            </div>
           </div>
         `)
       }

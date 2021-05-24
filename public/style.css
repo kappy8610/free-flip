@@ -1,9 +1,70 @@
+header {
+  margin: 0;
+  background-color: #2f9976;
+  height: 4em;
+}
+
+header > h1 {
+  color: white;
+  margin: auto 1em;
+  height: 2em;
+  padding-top: 10px;
+}
+
+#frm-quit {
+  float: right;
+  position: relative;
+  top: -90%;
+  margin-right: 20px;
+}
+
+#frm-quit button {
+  display: none;
+  color: white;
+  background: none;
+  border: none;
+}
+
+#frm-quit button:hover{
+  opacity: 0.7;
+}
+
+body {
+  margin: 0;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+.connection {
+  width: 275px;
+  margin: 32px auto;
+}
+
 #inputmyname {
   display:none;
+  padding: 1em;
+  background: #EEE;
+  border-radius: 1em;
+  box-shadow: 2px 2px 2px;
+}
+
+#inputmyname button{
+  width: 4em;
+  background-color: #2f9976;
+  color: white;
+  border: none;
+  border-radius: 1px;
 }
 
 #main {
   display:none;
+}
+
+.canvas {
+  width: 400px;
+  margin: auto;
 }
 
 /* #msglist{list-style-type:none; padding-left:1px;}
@@ -14,23 +75,57 @@
   border: 1px solid #000000;
 }
 
-#flip-index div {
-  margin: 1em;
+.canvas-buttons {
+  display: flex;
+  justify-content: space-between;
 }
 
-#flip-index p {
-  overflow-wrap: break-word;
-  width: 200px;
+#submit-flip{
+  color: white;
+  background: blue;
+  border: none;
+  border-radius: 8px;
 }
 
-#flip-index img {
-  border: solid 1px;
+#clear-button {
+  color: white;
+  background: red;
+  border: none;
+  border-radius: 8px;
 }
 
 #flip-index {
   display: flex;
-  flex-direction: row-reverse;
+  flex-flow: row wrap;
   float: left;
+}
+
+#flip-index div {
+  margin: 0;
+}
+
+#flip-index p {
+  overflow-wrap: break-word;
+  max-width: 380px;
+  text-align:center;
+}
+
+.pictures{
+  position: relative;
+}
+
+#flip-index .picture_frame {
+  width: 348px;
+  height: 318px;
+}
+
+#flip-index .picture {
+  border: none;
+  position: absolute;
+  top: 17.5%;
+  left: 21.5%;
+  width: 200px;
+  height: 200px;
 }
 
 
@@ -39,7 +134,7 @@
 /*-------------------------
  * STEP2
  *-------------------------*/
-#inputmyname{
+/* #inputmyname{
   display:none;
 }
 #txt-myname{
@@ -107,7 +202,7 @@
   font-weight: bold;
 }
 
-#frm-quit button{
+button{
   width: 100px;
   height: 30px;
   font-size: 12pt;

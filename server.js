@@ -113,10 +113,10 @@ io.on("connection", (socket)=>{
     if (!!MEMBER[socket.id]){
     // 本人に通知
       io.to(socket.id).emit("quit-result", {status: true});
-  
+
       // 本人以外に通知
       socket.broadcast.emit("member-quit", {token:MEMBER[socket.id].count, name:MEMBER[socket.id].name});
-  
+
       // 削除
       delete MEMBER[socket.id];
     }
